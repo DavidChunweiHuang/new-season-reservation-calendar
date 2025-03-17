@@ -58,6 +58,17 @@ function App() {
     "2025-04-01",
   ];
 
+  // 🔹 合併兩個陣列，並加上 type 標記
+  const combinedTimes = [
+    ...restockTime.map((time) => ({ time, type: "restock" })),
+    ...availableTime.map((time) => ({ time, type: "available" }))
+  ];
+
+  // 🔹 依照時間排序
+  const sortedTimes = combinedTimes.sort((a, b) =>
+    a.time.localeCompare(b.time)
+  );
+
   const disabledDays = (date) => {
     const dayOfWeek = date.day(); // day() 返回 0 (週日) 到 6 (週六)
     // return (dayOfWeek === 1 || dayOfWeek === 2);
@@ -77,7 +88,7 @@ function App() {
         {/* 動態顯示可選時段 */}
         <div className="time-container">
           <div id="time-title">當日可預約時段</div>
-          <div className="subTime-container">
+          {/* <div className="subTime-container">
             {restockTime.length > 0 ? (
               restockTime.map((time, index) => (
                 <div key={index} className="time-box-chosen">
@@ -87,13 +98,26 @@ function App() {
             ) : (
               <p className="no-time"></p>
             )}
-            {/* {restockTime.length > 0 ? () : (<p></p>)} */}
-          </div>
-          <div className="subTime-container">
+          </div> */}
+          {/* <div className="subTime-container">
             {availableTime.length > 0 ? (
               availableTime.map((time, index) => (
                 <div key={index} className="time-box">
                   {time}
+                </div>
+              ))
+            ) : (
+              <p className="no-time">該日時段已額滿</p>
+            )}
+          </div> */}
+          <div className="subTime-container">
+            {sortedTimes.length > 0 ? (
+              sortedTimes.map((item, index) => (
+                <div
+                  key={index}
+                  className={item.type === "restock" ? "time-box-chosen" : "time-box"}
+                >
+                  {item.time}
                 </div>
               ))
             ) : (
