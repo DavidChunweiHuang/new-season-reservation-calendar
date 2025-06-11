@@ -97,8 +97,8 @@ iframe {
 /* 讓 time-box 保持 2x2 排列 */
 .subTime-container {
   display: grid;
-  grid-template-columns: repeat(1, 120px);
-  grid-template-rows: auto;
+  grid-template-columns: repeat(5, 120px);
+  /* grid-template-rows: auto; */
   gap: 10px;
   justify-content: center;
 }
