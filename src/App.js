@@ -16,7 +16,7 @@ function App() {
   const fetchData = async (queryDate) => {
     try {
       const myHeaders = new Headers();
-      myHeaders.append("Authorization", "Basic RGx5SWtwRHJtbHd3Q3lUQ0FLNXpSbitNNDFCTzBoS050ODN4OS9yVm8vclNLRmxDOTRTYURicmdyczdUa2t5b0xyUjlrM0UzUlVFPQ==");
+      myHeaders.append("Authorization", "Basic RzljaEEzSzF3NmRzK0N3SnhiL1JGb2VCU29XcE1BUkwyYU1rRThUUEtTRUlJbDFkanYyck1VdWI3UUFwQlAvOC9GNjRHZy9hSm80PQ==");
       myHeaders.append("Cookie", "JSESSIONID=node0baq2q3668zvejyqjpz47x2y59128.node0");
 
       const requestOptions = {
@@ -52,10 +52,10 @@ function App() {
 
   // 指定可選日期（格式：YYYY-MM-DD）
   const allowedDates = [
-    "2025-12-28",
-    "2025-12-29",
-    "2025-12-30",
-    "2025-12-31"
+    "2026-04-27",
+    "2026-04-28",
+    "2026-04-29",
+    "2026-04-30"
   ];
 
   // 🔹 合併兩個陣列，並加上 type 標記
