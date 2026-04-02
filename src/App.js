@@ -48,7 +48,7 @@ function App() {
     const queryDate = `1000456,eq,${currentDate}`
     fetchData(queryDate)
 
-  }, [fetchData]); // 每次 value 被重新選擇時
+  }, [value]); // 每次 value 被重新選擇時
 
   // 指定可選日期（格式：YYYY-MM-DD）
   const allowedDates = [
