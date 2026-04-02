@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import './App.css';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -48,7 +48,7 @@ function App() {
     const queryDate = `1000456,eq,${currentDate}`
     fetchData(queryDate)
 
-  }, [value]); // 每次 value 被重新選擇時
+  }, [fetchData]); // 每次 value 被重新選擇時
 
   // 指定可選日期（格式：YYYY-MM-DD）
   const allowedDates = [
@@ -70,7 +70,7 @@ function App() {
   );
 
   const disabledDays = (date) => {
-    const dayOfWeek = date.day(); // day() 返回 0 (週日) 到 6 (週六)
+    // const dayOfWeek = date.day(); // day() 返回 0 (週日) 到 6 (週六)
     // return (dayOfWeek === 1 || dayOfWeek === 2);
     return !allowedDates.includes(date.format("YYYY-MM-DD"));
   }
