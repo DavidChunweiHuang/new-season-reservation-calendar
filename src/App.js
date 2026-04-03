@@ -25,7 +25,7 @@ function App() {
         redirect: "follow"
       };
 
-      const response = await fetch(`https://ap11.ragic.com/thesunalley/for-testing/23?PAGEID=V0C&where=${queryDate}`, requestOptions)
+      const response = await fetch(`https://ap11.ragic.com/thesunalley/product-management/3?PAGEID=R7X&where=${queryDate}`, requestOptions)
       const result = await response.json();
 
       const restockTimeElement = Object.values(result)
