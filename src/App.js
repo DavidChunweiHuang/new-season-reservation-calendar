@@ -43,6 +43,7 @@ function App() {
     }
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const currentDate = value.format("YYYY/MM/DD")
     const queryDate = `1000456,eq,${currentDate}`
